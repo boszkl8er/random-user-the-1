@@ -14,14 +14,6 @@ import org.springframework.web.bind.annotation.RestController
 class UserController (
     private val httpApi: HttpApi
 ){
-//    @GetMapping("/users")
-//    fun getAllUser(@RequestParam seed: String?):ResponseEntity<ResponseModel<String>>{
-//        return if (seed != null){
-//            ResponseEntity.ok(ResponseModel(ResponseCode.CODE200, httpApi.getAllBySeed(seed)))
-//        } else {
-//            ResponseEntity.ok(ResponseModel(ResponseCode.CODE200, httpApi.getAll()))
-//        }
-//    }
 
     @GetMapping("/users")
     fun getAllRandomUserBySeed(@RequestParam seed: String?):ResponseEntity<ResponseModel<String>>
