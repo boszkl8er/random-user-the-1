@@ -1,0 +1,33 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /randomuser
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: root
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: create-drop
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+      show-sql: true
+
+rest:
+  timeout:
+    connection: 2000
+    read: 22000
+    request: 2200
+  connection:
+    maxPerRoute: 10
+    maxTotal: 1
+
+retry:
+  fixed-backoff: 100
